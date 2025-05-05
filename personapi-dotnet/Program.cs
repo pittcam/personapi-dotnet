@@ -6,10 +6,10 @@ using personapi_dotnet.Controllers.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Repositorios
 
 
-// Configuracion de servicios
+
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<PersonasApiController>();
@@ -18,7 +18,7 @@ builder.Services.AddScoped<EstudiosApiController>();
 builder.Services.AddScoped<TelefonosApiController>();
 
 
-// Configuracion de Swagger
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -29,22 +29,21 @@ builder.Services.AddDbContext<PersonaDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-// Configurar Kestrel para que escuche en todas las interfaces
+
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
-    serverOptions.ListenAnyIP(8080); // Cambia el puerto si es necesario
+    serverOptions.ListenAnyIP(8080); 
 });
 
 var app = builder.Build();
 
-// Middleware para manejar excepciones
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
 else
 {
-    // Habilitar Swagger en cualquier entorno para pruebas
+ 
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {

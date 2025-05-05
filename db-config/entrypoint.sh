@@ -3,7 +3,7 @@
 /opt/mssql/bin/sqlservr &
  
 # Esperar a que SQL Server esté disponible
-sleep 30s
+sleep 60s
  
 # Variables de entorno
 SA_PASSWORD=Password123!

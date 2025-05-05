@@ -1,0 +1,36 @@
+services:
+  sqlserver:
+    build:
+      context: .
+      dockerfile: ./db-config/Dockerfile
+    container_name: sqlserver_container
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+    networks:
+      - personanetwork
+
+  personapi-dotnet:
+    build: 
+      context: ./personapi-dotnet
+      dockerfile: Dockerfile
+    ports:
+      - "32773:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      - DB_SERVER=ms_sql
+      - DB_NAME=persona_db
+      - DB_PORT=1433
+      - SA_PASSWORD=Password123!
+    networks:
+      - personanetwork
+    
+
+volumes:
+  sqlserverdata:
+
+networks:
+  personanetwork:
+    driver: bridge
