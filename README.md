@@ -7,5 +7,5 @@
 - Juan David Barajas Urrea
 
 ## Pasos
-- Correr el Docker-Compose en el terminal con docker-compose up --build --remove-orphans
+- Correr el Docker-Compose en el terminal con docker-compose up --build 
 - Abrir http://localhost:32773 en el navegador
