@@ -1,10 +1,13 @@
 html {
-    font-size: 15px;
+    font-size: 100%;
+    position: static;
+    min-height: auto;
+    background-color: transparent;
 }
 
 @media (min-width: 768px) {
     html {
-        font-size: 17px;
+        font-size: 100%;
     }
 }
 
@@ -13,20 +16,14 @@ html {
 .btn-link.nav-link:focus,
 .form-control:focus,
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem #fff, 0 0 0 0.3rem #0d6efd;
+    box-shadow: none;
     outline: none;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-    background-color: #343a40; 
-}
-
 body {
-    margin-bottom: 80px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f8f9fa;
-    background-color: #343a40; 
-    line-height: 1.6;
+    margin: 0;
+    font-family: inherit;
+    color: inherit;
+    background-color: transparent;
+    line-height: normal;
 }
