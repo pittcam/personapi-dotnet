@@ -21,7 +21,7 @@ namespace personapi_dotnet.Controllers
         // GET: Telefonos
         public async Task<IActionResult> Index()
         {
-            var personaDbContext = _context.Telefonos.Include(t => t.DuenioNavigation);
+            var personaDbContext = _context.Telefonos.Include(t => t.DocumentoPersona);
             return View(await personaDbContext.ToListAsync());
         }
 
@@ -34,7 +34,7 @@ namespace personapi_dotnet.Controllers
             }
 
             var telefono = await _context.Telefonos
-                .Include(t => t.DuenioNavigation)
+                .Include(t => t.DocumentoPersona)
                 .FirstOrDefaultAsync(m => m.Num == id);
             if (telefono == null)
             {
@@ -130,7 +130,7 @@ namespace personapi_dotnet.Controllers
             }
 
             var telefono = await _context.Telefonos
-                .Include(t => t.DuenioNavigation)
+                .Include(t => t.DocumentoPersona)
                 .FirstOrDefaultAsync(m => m.Num == id);
             if (telefono == null)
             {

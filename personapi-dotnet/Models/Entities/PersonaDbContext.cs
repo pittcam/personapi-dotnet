@@ -122,7 +122,7 @@ public partial class PersonaDbContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("oper");
 
-            entity.HasOne(d => d.DuenioNavigation).WithMany(p => p.Telefonos)
+            entity.HasOne(d => d.DocumentoPersona).WithMany(p => p.Telefonos)
                 .HasForeignKey(d => d.Duenio)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__telefono__duenio__3F466844");

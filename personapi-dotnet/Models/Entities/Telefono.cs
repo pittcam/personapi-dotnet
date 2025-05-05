@@ -13,5 +13,5 @@ public partial class Telefono
 	public long Duenio { get; set; }
 
 	[JsonIgnore]
-	public virtual Persona DuenioNavigation { get; set; } = null!;
+	public virtual Persona DocumentoPersona { get; set; } = null!;
 }
