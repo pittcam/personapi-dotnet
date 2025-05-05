@@ -6,7 +6,7 @@ namespace personapi_dotnet.Models.Entities;
 
 public partial class Persona
 {
-    public int Cc { get; set; }
+    public long Cc { get; set; }
 
     public string Nombre { get; set; } = null!;
 

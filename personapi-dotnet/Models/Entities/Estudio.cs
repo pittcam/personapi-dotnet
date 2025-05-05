@@ -8,7 +8,7 @@ public partial class Estudio
 {
     public int IdProf { get; set; }
 
-    public int CcPer { get; set; }
+    public long CcPer { get; set; }
 
     public DateOnly? Fecha { get; set; }
 

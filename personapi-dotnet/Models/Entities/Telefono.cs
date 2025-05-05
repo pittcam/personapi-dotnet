@@ -10,7 +10,7 @@ public partial class Telefono
 
 	public string Oper { get; set; } = null!;
 
-	public int Duenio { get; set; }
+	public long Duenio { get; set; }
 
 	[JsonIgnore]
 	public virtual Persona DuenioNavigation { get; set; } = null!;

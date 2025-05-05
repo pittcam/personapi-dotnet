@@ -29,7 +29,7 @@ namespace personapi_dotnet.Controllers.Api
 
         // GET: api/PersonasApi/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Persona>> GetPersona(int id)
+        public async Task<ActionResult<Persona>> GetPersona(long id) 
         {
             var persona = await _context.Personas.FindAsync(id);
 
@@ -42,9 +42,8 @@ namespace personapi_dotnet.Controllers.Api
         }
 
         // PUT: api/PersonasApi/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutPersona(int id, Persona persona)
+        public async Task<IActionResult> PutPersona(long id, Persona persona)  
         {
             if (id != persona.Cc)
             {
@@ -73,7 +72,6 @@ namespace personapi_dotnet.Controllers.Api
         }
 
         // POST: api/PersonasApi
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Persona>> PostPersona(Persona persona)
         {
@@ -99,7 +97,7 @@ namespace personapi_dotnet.Controllers.Api
 
         // DELETE: api/PersonasApi/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeletePersona(int id)
+        public async Task<IActionResult> DeletePersona(long id) 
         {
             var persona = await _context.Personas.FindAsync(id);
             if (persona == null)
@@ -113,7 +111,7 @@ namespace personapi_dotnet.Controllers.Api
             return NoContent();
         }
 
-        private bool PersonaExists(int id)
+        private bool PersonaExists(long id) 
         {
             return _context.Personas.Any(e => e.Cc == id);
         }

@@ -25,7 +25,7 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: Personas/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)  // ✅ cambiado a long?
         {
             if (id == null)
             {
@@ -49,8 +49,6 @@ namespace personapi_dotnet.Controllers
         }
 
         // POST: Personas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Cc,Nombre,Apellido,Genero,Edad")] Persona persona)
@@ -65,7 +63,7 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: Personas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)  // ✅ cambiado a long?
         {
             if (id == null)
             {
@@ -81,11 +79,9 @@ namespace personapi_dotnet.Controllers
         }
 
         // POST: Personas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Cc,Nombre,Apellido,Genero,Edad")] Persona persona)
+        public async Task<IActionResult> Edit(long id, [Bind("Cc,Nombre,Apellido,Genero,Edad")] Persona persona)  // ✅ cambiado a long
         {
             if (id != persona.Cc)
             {
@@ -116,7 +112,7 @@ namespace personapi_dotnet.Controllers
         }
 
         // GET: Personas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)  // ✅ cambiado a long?
         {
             if (id == null)
             {
@@ -136,7 +132,7 @@ namespace personapi_dotnet.Controllers
         // POST: Personas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)  // ✅ cambiado a long
         {
             var persona = await _context.Personas.FindAsync(id);
             if (persona != null)
@@ -148,7 +144,7 @@ namespace personapi_dotnet.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool PersonaExists(int id)
+        private bool PersonaExists(long id)  // ✅ cambiado a long
         {
             return _context.Personas.Any(e => e.Cc == id);
         }
