@@ -1,31 +1,26 @@
-﻿/* Modern professional style */
-
-/* Navbar brand */
-a.navbar-brand {
+﻿a.navbar-brand {
     white-space: nowrap;
     text-align: left;
     font-weight: 600;
     font-size: 1.3rem;
-    color: #333;
+    color: #f8f9fa;
 }
 
-/* Links */
 a {
-    color: #0056b3;
+    color: #66bfff;
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
     a:hover {
-        color: #003d80;
+        color: #3399ff;
         text-decoration: underline;
     }
 
-/* Primary button */
 .btn-primary {
     color: #fff;
     background-color: #0070f3;
-    border-color: #0056b3;
+    border-color: #3399ff;
     border-radius: 6px;
     padding: 0.5rem 1rem;
     font-weight: 500;
@@ -33,60 +28,55 @@ a {
 }
 
     .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #004494;
+        background-color: #3399ff;
+        border-color: #0070f3;
     }
 
-/* Active nav pills */
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #0070f3;
-    border-color: #0056b3;
+    border-color: #3399ff;
     font-weight: 500;
     border-radius: 4px;
 }
 
-/* Borders */
 .border-top {
-    border-top: 1px solid #d1d1d1;
+    border-top: 1px solid #555;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #d1d1d1;
+    border-bottom: 1px solid #555;
 }
 
-/* Subtle shadow */
 .box-shadow {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
 }
 
-/* Accept policy button */
 button.accept-policy {
     font-size: 1rem;
     line-height: 1.5;
     padding: 0.4rem 1rem;
     border-radius: 5px;
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #ccc;
+    background-color: #495057;
+    color: #f8f9fa;
+    border: 1px solid #6c757d;
     transition: background-color 0.2s ease;
 }
 
     button.accept-policy:hover {
-        background-color: #e2e6ea;
+        background-color: #6c757d;
     }
 
-/* Footer fixed */
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #f8f9fa;
-    color: #666;
+    background-color: #212529;
+    color: #adb5bd;
     text-align: center;
     font-size: 0.9rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #444;
     line-height: 60px;
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 -2px 4px rgba(255, 255, 255, 0.05);
 }
